@@ -23,6 +23,7 @@ from django.urls import path
 def show_start_page(request):
     return render(request, 'start_page.html')
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', show_start_page),
