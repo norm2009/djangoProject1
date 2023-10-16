@@ -18,13 +18,13 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
-from django.urls import path
+from django.urls import path,include
 
 def show_start_page(request):
-    return render(request, 'start_page.html')
-
+    return render(request, 'index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', show_start_page),
+
 ]
