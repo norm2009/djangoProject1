@@ -1,4 +1,5 @@
 from django.db import models
+#from django.contrib.gis.db import models
 
 class Place(models.Model):
 
@@ -6,6 +7,9 @@ class Place(models.Model):
     return '%s' % (self.title)
 
   title = models.CharField(max_length=200)
-  text = models.JSONField(max_length=1000, default='')
+  description_short = models.CharField(max_length=1000, default='')
+  description_long = models.CharField(max_length=1000, default='')
+  #coordinates = models.PolygonField()
+  lng = models.FloatField(default=0)
+  lat = models.FloatField(default=0)
 
-# Register your models here.
